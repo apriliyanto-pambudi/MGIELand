@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+	title="Selamat Datang di MGIE LAND - Hostel Premium di Indonesia"
+	description="MGIE LAND menawarkan pengalaman menginap premium dengan fasilitas modern dan pelayanan terbaik. Nikmati kenyamanan dan kemewahan di lokasi strategis."
+>
+	<main>
+		<!-- Hero Section -->
+		<section class="relative h-[600px]">
+			<div class="absolute inset-0 bg-black/50"></div>
+			<div class="absolute inset-0 flex items-center justify-center text-center text-white">
+				<div class="max-w-3xl px-4">
+					<h1 class="text-5xl font-bold mb-6">Selamat Datang di MGIE LAND</h1>
+					<p class="text-xl mb-8">Pengalaman Menginap Premium di Jantung Kota</p>
+					<a href="/kamar" class="bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+						Lihat Kamar Kami
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Features -->
+		<section class="py-20 bg-white">
+			<div class="max-w-7xl mx-auto px-4">
+				<h2 class="text-3xl font-bold text-center mb-12">Mengapa Memilih MGIE LAND?</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="text-center">
+						<h3 class="text-xl font-semibold mb-4">Lokasi Strategis</h3>
+						<p class="text-gray-600">Terletak di pusat kota dengan akses mudah ke berbagai destinasi populer</p>
+					</div>
+					<div class="text-center">
+						<h3 class="text-xl font-semibold mb-4">Fasilitas Modern</h3>
+						<p class="text-gray-600">Dilengkapi dengan fasilitas modern untuk kenyamanan maksimal</p>
+					</div>
+					<div class="text-center">
+						<h3 class="text-xl font-semibold mb-4">Pelayanan Premium</h3>
+						<p class="text-gray-600">Staff profesional siap melayani 24/7 untuk kepuasan tamu</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Rooms Preview -->
+		<section class="py-20">
+			<div class="max-w-7xl mx-auto px-4">
+				<h2 class="text-3xl font-bold text-center mb-12">Kamar Kami</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="bg-white rounded-lg overflow-hidden shadow-md">
+						<div class="h-48 bg-gray-200"></div>
+						<div class="p-6">
+							<h3 class="text-xl font-semibold mb-2">Kamar Standard</h3>
+							<p class="text-gray-600 mb-4">Kamar nyaman dengan fasilitas lengkap untuk pengalaman menginap yang menyenangkan</p>
+							<a href="/kamar" class="text-blue-600 hover:underline">Lihat Detail →</a>
+						</div>
+					</div>
+					<div class="bg-white rounded-lg overflow-hidden shadow-md">
+						<div class="h-48 bg-gray-200"></div>
+						<div class="p-6">
+							<h3 class="text-xl font-semibold mb-2">Kamar Deluxe</h3>
+							<p class="text-gray-600 mb-4">Kamar luas dengan pemandangan kota dan fasilitas premium</p>
+							<a href="/kamar" class="text-blue-600 hover:underline">Lihat Detail →</a>
+						</div>
+					</div>
+					<div class="bg-white rounded-lg overflow-hidden shadow-md">
+						<div class="h-48 bg-gray-200"></div>
+						<div class="p-6">
+							<h3 class="text-xl font-semibold mb-2">Suite</h3>
+							<p class="text-gray-600 mb-4">Pengalaman menginap mewah dengan ruang dan fasilitas eksklusif</p>
+							<a href="/kamar" class="text-blue-600 hover:underline">Lihat Detail →</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>

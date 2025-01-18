@@ -1,0 +1,101 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	image?: string;
+}
+
+const { title, description, image = '/og-image.jpg' } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO -->
+		<title>{title} | MGIE LAND</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={image} />
+	</head>
+	<body>
+		<header class="bg-white shadow-sm">
+			<nav class="max-w-7xl mx-auto px-4 py-4">
+				<div class="flex justify-between items-center">
+					<a href="/" class="text-2xl font-bold text-gray-800">MGIE LAND</a>
+					<div class="space-x-6">
+						<a href="/" class="text-gray-600 hover:text-gray-900">Beranda</a>
+						<a href="/kamar" class="text-gray-600 hover:text-gray-900">Kamar</a>
+						<a href="/fasilitas" class="text-gray-600 hover:text-gray-900">Fasilitas</a>
+						<a href="/tentang" class="text-gray-600 hover:text-gray-900">Tentang</a>
+						<a href="/kontak" class="text-gray-600 hover:text-gray-900">Kontak</a>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<slot />
+
+		<footer class="bg-gray-800 text-white mt-20">
+			<div class="max-w-7xl mx-auto px-4 py-12">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div>
+						<h3 class="text-xl font-bold mb-4">MGIE LAND</h3>
+						<p class="text-gray-300">Pengalaman menginap terbaik dengan kenyamanan dan pelayanan premium.</p>
+					</div>
+					<div>
+						<h3 class="text-xl font-bold mb-4">Kontak</h3>
+						<p class="text-gray-300">Email: info@mgieland.com</p>
+						<p class="text-gray-300">Telepon: +62 123 4567 890</p>
+					</div>
+					<div>
+						<h3 class="text-xl font-bold mb-4">Ikuti Kami</h3>
+						<div class="flex space-x-4">
+							<a href="#" class="text-gray-300 hover:text-white">Instagram</a>
+							<a href="#" class="text-gray-300 hover:text-white">Facebook</a>
+							<a href="#" class="text-gray-300 hover:text-white">Twitter</a>
+						</div>
+					</div>
+				</div>
+				<div class="mt-8 pt-8 border-t border-gray-700 text-center">
+					<p class="text-gray-300">&copy; {new Date().getFullYear()} MGIE LAND. Hak Cipta Dilindungi.</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #f6f6f6;
+	}
+</style>
